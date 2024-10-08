@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperation de votre carte cadeau</title>
+    <script>
+        const codesEtLiens = {
+            "AB123C": "https://docs.google.com/document/d/1NEkKxDe_4Hw7SLUUFggeopPxxAnOkdvO68j967Gzzlw/edit",
+            "XY456Z": "https://docs.google.com/document/d/16yAKbhQgLBsaES-i2ll2zNrTIJp5uMVgeRocrU9o6aU/edit",
+        };
+
+        function verifierCode() {
+            const code = document.getElementById("codeInput").value.toUpperCase();
+            if (codesEtLiens.hasOwnProperty(code)) {
+                window.location.href = codesEtLiens[code];
+            } else {
+                alert("Code invalide. Veuillez verifier et reessayer.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Recuperez votre carte cadeau</h1>
+    <p>Entrez le code unique que vous avez recu a la fin du questionnaire :</p>
+    <input type="text" id="codeInput" placeholder="Entrez votre code">
+    <button onclick="verifierCode()">Valider</button>
+</body>
+</html>
